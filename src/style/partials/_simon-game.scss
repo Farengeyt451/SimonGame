@@ -1,0 +1,71 @@
+.simon-sections {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.section {
+	width: 150px;
+	height: 150px;
+	margin: 20px 10px;
+	border-radius: 2px;
+	transition: all 0.1s;
+	&:hover,&:focus {
+		cursor: pointer;
+		filter: brightness(1.25);
+	}
+}
+
+.display {
+	padding: 10px;
+	border: 4px solid #BADA55;
+	border-radius: 50%;
+	span {
+		cursor: default;
+		font-size: 20px;
+		color: #787;
+	}
+}
+
+.green {
+	background-color: #00A74A;
+}
+
+.red {
+	background-color: #9F0F17;
+}
+
+.blue {
+	background-color: #094A8F;
+}
+
+.yellow {
+	background-color: #CCA707;
+}
+
+.simon-control {
+	display: flex;
+	width: 285px;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 40px;
+	border: 2px solid #BADA55;
+	border-radius: 10px;
+	padding: 20px 40px;
+}
+
+button {
+	width: 100px;
+	outline: none;
+	border: none;
+	padding: 5px 10px;
+	color: #333;
+	background-color: #F95;
+	border-radius: 4px;
+	&:hover, &:focus {
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+	}
+	&:active {
+		transform: translateY(2px);
+	}
+}

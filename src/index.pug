@@ -3,5 +3,17 @@ html(lang="en")
 	head
 		include templates/head
 	body
-
+		.simon-sections
+			.row
+				.section.green#clrGreen
+				.section.yellow#clrYellow
+			.row.display
+				span#output 12
+			.row
+				.section.red#clrRed
+				.section.blue#clrBlue
+		.simon-control
+			button#startGame Start
+			.strict-mode
+				button#strictMode Strict
 		include templates/scripts
