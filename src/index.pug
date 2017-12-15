@@ -3,12 +3,14 @@ html(lang="en")
 	head
 		include templates/head
 	body
+		.status
+			p#statusGame
 		.simon-sections
 			.row
 				.section.green#clrGreen
 				.section.yellow#clrYellow
 			.row.display
-				span#output
+				span#output 00
 			.row
 				.section.red#clrRed
 				.section.blue#clrBlue
