@@ -17,19 +17,6 @@ let generatedSeq = [];
 let playersSeq = [];
 let strict = false;
 
-function congratulation() {
-	for (let k = 0; k < 1000; k++) {
-		setTimeout(function() {
-			let n = Math.floor(Math.random() * 4);
-			console.log(n);
-			sections[n].classList.add("congratulation-animation");
-			setTimeout(function() {
-				sections[n].classList.remove("congratulation-animation");
-			}, 250);
-		}, k * 500);
-	}
-}
-
 function showMsg(msg) {
 	statusGame.innerText = msg;
 	let delMsg = setTimeout(() => {
@@ -37,7 +24,6 @@ function showMsg(msg) {
 	}, 2000);
 	if (msg === "You win") {
 		clearTimeout(delMsg);
-		congratulation();
 	}
 }
 
@@ -62,11 +48,9 @@ function checkPlayerMove(color) {
 	if (playersSeq[0] !== generatedSeq[0]) {
 		attachSouds(color);
 		if (strict) {
-			console.log("You Lost");
 			showMsg("You Lost");
 			setTimeout(startGame, 1000);
 		} else {
-			console.log("Wrong Step Try Again ;)");
 			showMsg("Wrong Step Try Again ;)");
 			setTimeout(playPushedSeq, 2000);
 		}
@@ -75,7 +59,6 @@ function checkPlayerMove(color) {
 		let checkCorrect = playersSeq.length === generatedSeq.length;
 		if (checkCorrect) {
 			if (count === 20) {
-				console.log("You win");
 				showMsg("You win");
 			} else {
 				setTimeout(genColor, 1500);
@@ -121,6 +104,7 @@ function resetAll() {
 	count = 0;
 	generatedSeq = [];
 	playersSeq = [];
+	statusGame.innerText = "";
 }
 
 function startGame() {
